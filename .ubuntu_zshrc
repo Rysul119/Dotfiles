@@ -10,7 +10,6 @@ alias vi='vim'
 alias xclip='xclip -selection c'
 alias ls='colorls  --sort-dirs --report'
 alias lc='colorls --tree=2'
-alias enable_scrl='sudo synclient VertTwoFingerScroll=1'
 
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -67,8 +66,7 @@ bindkey '^[[3;5~' kill-word
 PS1="%F{cyan} %~ >%F{blue}> %F{white}"
 
 # ----- plugins -----
-#PLUGINS_DIR=/usr/share/zsh/plugins/
-PLUGINS_DIR=~/.oh-my-zsh/custom/plugins
+PLUGINS_DIR=~/.zsh_plugins/
 source $PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -112,11 +110,10 @@ POWERLEVEL9K_CUSTOM_ANACONDA_ICON='echo  $CONDA_DEFAULT_ENV'
 POWERLEVEL9K_CUSTOM_ANACONDA_ICON_BACKGROUND=red
 POWERLEVEL9K_CUSTOM_ANACONDA_ICON_FOREGROUND=white
 #POWERLEVEL9K_ANACONDA_SHOW_PYTHON_VERSION=false
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_os_icon ssh root_indicator dir dir_writable custom_anaconda_icon vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_anaconda_icon custom_os_icon ssh root_indicator dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status background_jobs time ram)
 
 if [[ $(tty) == /dev/pts/* ]]; then
-	#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme;
 	source ~/powerlevel10k/powerlevel10k.zsh-theme;
 else
 	clear
